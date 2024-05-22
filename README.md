@@ -10,7 +10,7 @@ The configuration in this repo (micro instance for compute with 10GB of local st
 
 1. Sign up for an [Exoscale account](https://www.exoscale.com/) if you don't already have one. You'll be asked to set up an organization when you first log in. It doesn't matter what value you put, since it's not referenced anywhere in the terraform.
 
-2. Get your API keys by creating an IAM role with all permissions on the compute scope. Then create an API key, copy `.env.example` to `.env` and use the values shown in the UI to fill out the two variables there.
+2. Get your API keys by creating an IAM role with a default DENY, and an ALLOW for the compute scope. Then create an API key, copy `.env.example` to `.env` and use the values shown in the UI to fill out the two variables there.
 
 ![IAM policy](iam-policy.png)
 
