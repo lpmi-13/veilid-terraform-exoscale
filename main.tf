@@ -42,6 +42,11 @@ resource "exoscale_compute_instance" "veilid-instance" {
   ssh_key   = exoscale_ssh_key.veilid-key.id
 
   security_group_ids = [exoscale_security_group.veilid-access.id]
+
+  lifecycle {
+    # don't replace the instance if a newer version of the template gets released
+    ignore_changes = [template_id]
+  }
 }
 
 resource "exoscale_ssh_key" "veilid-key" {
